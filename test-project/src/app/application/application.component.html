@@ -1,0 +1,50 @@
+<!-- <table>
+  <tr *ngFor="let app of apps">
+    <td>{{app.Id}}</td>>
+    <td>{{app.ApplicationName}}</td>
+  </tr>
+</table> -->
+<mat-table #table [dataSource]="dataSource">
+  <ng-container matColumnDef="ApplicationName">
+    <mat-header-cell *matHeaderCellDef>ApplicationName</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element.ApplicationName}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="ApplicationURL">
+      <mat-header-cell *matHeaderCellDef>ApplicationURL</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.ApplicationURL}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Status">
+        <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.Status}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ApplicationImageURL">
+          <mat-header-cell *matHeaderCellDef>ApplicationImageURL</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.Status}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ApplicationGroup">
+            <mat-header-cell *matHeaderCellDef>ApplicationGroup</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.ApplicationGroup}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="ApplicationSideMenuImage">
+              <mat-header-cell *matHeaderCellDef>ApplicationSideMenuImage</mat-header-cell>
+              <mat-cell *matCellDef="let element">{{element.ApplicationSideMenuImage}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ApplicationTarget">
+                <mat-header-cell *matHeaderCellDef>ApplicationTarget</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.ApplicationTarget}}</mat-cell>
+              </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+		<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<!-- <table mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="ApplicationName">
+        <mat-header-cell *matHeaderCellDef>ApplicationName</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.ApplicationName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ApplicationURL">
+        <mat-header-cell *matHeaderCellDef>ApplicationURL</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.ApplicationURL}}</mat-cell>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table> -->

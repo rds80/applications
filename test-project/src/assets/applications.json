@@ -1,0 +1,21 @@
+[{
+	"Id": 1,
+	"ApplicationName": "NYC FITNESSGRAM",
+	"ApplicationURL": "http://localhost/schoolwellness/nycfitnessgram/Default.aspx",
+	"Status": "Active",
+	"ApplicationImageURL": "SVG/fitnessgram.svg",
+	"ApplicationGroup": "Internal Apps",
+	"ApplicationSideMenuImage": "SVG/fitnessgram.svg",
+	"ApplicationTarget": "_parent"
+},
+{
+	"Id": 2,
+	"ApplicationName": "CHAMPS",
+	"ApplicationURL": "http://es00vdweb24/schoolwellness/champs/Default.aspx",
+	"Status": "Active",
+	"ApplicationImageURL": "SVG/champs.svg",
+	"ApplicationGroup": "Internal Apps",
+	"ApplicationSideMenuImage": "SVG/champs.svg",
+	"ApplicationTarget": "_blank"
+}
+]
