@@ -1,6 +1,7 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { NavigationService } from '../navigation.service';
 import { INavigation } from '../INavigation';
+import { ShareAppIDService } from '../share-app-id.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,15 +9,16 @@ import { INavigation } from '../INavigation';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements AfterViewInit {
-  appId = 1;
   navigations: Array<INavigation>;
 
-  constructor(private navigationService: NavigationService) { }
+  constructor(private navigationService: NavigationService, private shareAppIdService: ShareAppIDService) { }
 
   ngAfterViewInit() {
-    this.navigationService
-      .getNavigations(this.appId)
-      .subscribe(data => {this.navigations = data; });
+    this.shareAppIdService.appIdChanged.subscribe((appId) => {
+      this.navigationService
+        .getNavigations(appId)
+        .subscribe(data => {this.navigations = data; });
+        console.log(appId);
+    });
   }
-
 }

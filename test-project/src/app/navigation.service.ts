@@ -17,7 +17,7 @@ export class NavigationService implements INavigationService {
 
    }
 
-   getNavigations(appId: number): Observable<Array<INavigation>> {
+   getNavigations(appId: any): Observable<Array<INavigation>> {
       return this.httpClient.get<Array<INavigation>>('../assets/navigations.json')
                   .pipe(
                     map(data => data.filter(navigation => navigation.NavAppId === appId))

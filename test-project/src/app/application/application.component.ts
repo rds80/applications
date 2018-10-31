@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ApplicationService } from '../application.service';
 import { IApplication } from '../IApplication';
+import { ShareAppIDService } from '../share-app-id.service';
 
 @Component({
   selector: 'app-application',
@@ -10,7 +11,7 @@ import { IApplication } from '../IApplication';
 export class ApplicationComponent implements AfterViewInit {
   apps: Array<IApplication>;
 
-  constructor(private applicationService: ApplicationService) { }
+  constructor(private applicationService: ApplicationService, private shareAppIdService: ShareAppIDService) { }
 
   ngAfterViewInit() {
     this.applicationService
@@ -18,6 +19,10 @@ export class ApplicationComponent implements AfterViewInit {
       .subscribe(data => {this.apps = data; } );
   }
 
+  sendChangedId(appId) {
+    this.shareAppIdService.changeAppId(appId);
+    console.log('app id from app controller is ' + appId);
+  }
 
 
 }
