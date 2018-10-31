@@ -1,0 +1,31 @@
+[{
+	"Id": 1,
+	"NavAppId": 1,
+	"NavId": "1FGP",
+	"NavName": "Home",
+	"NavParentId": "",
+	"NavPageURL": "?p=home",
+	"NavPosition": "Top",
+	"NavActive": "Y",
+	"NavDesktop" : "Y",
+	"NavTablet" : "Y",
+	"NavPhone": "Y",
+	"NavRoleId" : "6,17,28,43,44,49,50,59,60,63,64,77,78,79,80,81",
+	"NavTarget": "_parent"
+},
+{
+	"Id": 2,
+	"NavAppId": 3,
+	"NavId": "2FGP",
+	"NavName": "Toolbox",
+	"NavParentId": "",
+	"NavPageURL": "",
+	"NavPosition": "Top",
+	"NavActive": "Y",
+	"NavDesktop" : "Y",
+	"NavTablet" : "Y",
+	"NavPhone": "Y",
+	"NavRoleId" : "6,17,28,43,44,49,50,59,60,63,64,77,78,79,80,81",
+	"NavTarget": "_parent"
+}
+]
