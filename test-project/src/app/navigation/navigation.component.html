@@ -1,7 +1,9 @@
 <mat-form-field>
-  <mat-select placeholder="navigations">
-  <mat-option *ngFor="let nav of navigations" [value]="nav.Id">
+  <mat-select placeholder="navigations" >
+  <mat-option (click)="sendChangedNav(nav)" *ngFor="let nav of navigations" [value]="nav.Id">
     {{nav.NavName}}
   </mat-option>
 </mat-select>
 </mat-form-field>
+<br/>
+<app-navigation-detail></app-navigation-detail>

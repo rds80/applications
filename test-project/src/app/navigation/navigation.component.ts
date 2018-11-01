@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 import { NavigationService } from '../navigation.service';
 import { INavigation } from '../INavigation';
 import { ShareAppIDService } from '../share-app-id.service';
+import { ShareNavigationService } from '../share-navigation.service';
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +12,8 @@ import { ShareAppIDService } from '../share-app-id.service';
 export class NavigationComponent implements AfterViewInit {
   navigations: Array<INavigation>;
 
-  constructor(private navigationService: NavigationService, private shareAppIdService: ShareAppIDService) { }
+  constructor(private navigationService: NavigationService, private shareAppIdService: ShareAppIDService,
+    private sharedNavService: ShareNavigationService) { }
 
   ngAfterViewInit() {
     this.shareAppIdService.appIdChanged.subscribe((appId) => {
@@ -20,5 +22,9 @@ export class NavigationComponent implements AfterViewInit {
         .subscribe(data => {this.navigations = data; });
         console.log(appId);
     });
+  }
+
+  sendChangedNav(nav) {
+    this.sharedNavService.changeNavigation(nav);
   }
 }

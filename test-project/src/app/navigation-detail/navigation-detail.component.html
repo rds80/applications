@@ -1,1 +1,11 @@
-{{navId}}
+<div *ngIf="navigation != null">
+<form>
+  <label for="navName">Navigation Name:</label>
+  <br/>
+  <input type="text" name="navName" [(ngModel)]="navigation.NavName" >
+  <br/>
+  <label for="navId">Navigation Id:</label>
+  <br/>
+  <input type="text" name="navId" [(ngModel)]="navigation.NavId" >
+</form>
+</div>
