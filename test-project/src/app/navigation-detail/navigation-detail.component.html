@@ -1,11 +1,42 @@
 <div *ngIf="navigation != null">
 <form>
-  <label for="navName">Navigation Name:</label>
+  <label for="navName">Navigation Name</label>
   <br/>
   <input type="text" name="navName" [(ngModel)]="navigation.NavName" >
   <br/>
-  <label for="navId">Navigation Id:</label>
+  <label for="navId">Nav ID</label>
   <br/>
   <input type="text" name="navId" [(ngModel)]="navigation.NavId" >
+  <br/>
+  <label for="navParentCode">Nav Parent Code</label>
+  <br/>
+  <input type="text" name="navParentCode" [(ngModel)]="navigation.NavParentId">
+  <br/>
+  <label for="navPageURL">Page URL</label>
+  <br/>
+  <input type="text" name="navPageURL" [(ngModel)]="navigation.NavPageURL">
+  <br/>
+  <label for="navPosition">Position</label>
+  <br/>
+  <input type="text" name="navPosition" [(ngModel)]="navigation.NavPosition">
+  <br/>
+  <label for="navRoleAccess">Role Access</label>
+  <br/>
+  <input id="textboxid" type="text" name="navRoleAccess" [(ngModel)]="navigation.NavRoleId">
+  <br/>
+  <label for="navTargetPage">Target Page</label>
+  <br/>
+  <select [(ngModel)]="navigation.NavTarget">
+    <option>_target</option>
+    <option>_blank</option>
+    <option>_parent</option>
+  </select>
+  <br/>
+  <input type="checkbox" [id]="navigation.NavActive" [name]="navigation.NavActive"
+    [checked]="navigation.NavActive === 'Y' ? true:false"
+    (change)="onActiveChange(navigation, $event)">Navigation Active
+  <br/>
+
+  <button type="submit" (click)="onSubmit(navigation)">Submit</button>
 </form>
 </div>

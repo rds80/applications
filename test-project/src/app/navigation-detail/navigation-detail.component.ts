@@ -17,7 +17,17 @@ export class NavigationDetailComponent implements AfterViewInit {
     this.sharedNavService.navigationChanged.subscribe((navigation) => {
       this.navigation = navigation;
       console.log('navigation detail id is: ' + navigation.NavPageURL);
+      navigation.NavTarget = navigation.NavTarget;
+      console.log('navActive' + navigation.NavActive);
     });
+  }
+
+  onActiveChange(navigation, event) {
+    this.navigation.NavActive = event.target.checked ? 'Y' : 'N';
+  }
+
+  onSubmit(navigation) {
+    alert('Submitting data:' + JSON.stringify(navigation));
   }
 
 }
