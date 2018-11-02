@@ -3,6 +3,7 @@ import { ValueTransformer } from '@angular/compiler/src/util';
 import { INavigation } from '../INavigation';
 import { ShareNavigationService } from '../share-navigation.service';
 import { ShareAppIDService } from '../share-app-id.service';
+import { Navigation } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-navigation-detail',
@@ -20,7 +21,7 @@ export class NavigationDetailComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-      this.navigation.NavName = '';
+      this.navigation = {} as INavigation;
     }
 
   ngAfterViewInit() {
@@ -31,6 +32,7 @@ export class NavigationDetailComponent implements OnInit, AfterViewInit {
       console.log('navigation detail id is: ' + navigation.NavPageURL);
       navigation.NavTarget = navigation.NavTarget;
       console.log('navActive' + navigation.NavActive);
+      this.showNavDetail = true;
       }
     });
 
