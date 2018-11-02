@@ -22,18 +22,22 @@ export class NavigationDetailComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
       this.navigation = {} as INavigation;
+      this.navigation.NavActive = 'N';
+      this.navigation.NavDesktop = 'N';
+      this.navigation.NavTablet = 'N';
+      this.navigation.NavPhone = 'N';
     }
 
   ngAfterViewInit() {
 
     this.sharedNavService.navigationChanged.subscribe((navigation) => {
-      if (navigation != null) {
+      // if (navigation != null) {
       this.navigation = navigation;
       console.log('navigation detail id is: ' + navigation.NavPageURL);
       navigation.NavTarget = navigation.NavTarget;
       console.log('navActive' + navigation.NavActive);
       this.showNavDetail = true;
-      }
+      // }
     });
 
 
