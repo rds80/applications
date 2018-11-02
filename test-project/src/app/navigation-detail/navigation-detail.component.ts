@@ -34,7 +34,7 @@ export class NavigationDetailComponent implements OnInit, AfterViewInit {
       // if (navigation != null) {
       this.navigation = navigation;
       console.log('navigation detail id is: ' + navigation.NavPageURL);
-      navigation.NavTarget = navigation.NavTarget;
+      this.navigation.NavTarget = navigation.NavTarget;
       console.log('navActive' + navigation.NavActive);
       this.showNavDetail = true;
       // }
