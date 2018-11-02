@@ -12,8 +12,15 @@ export class ShareNavigationService {
   private navigation = new Subject<INavigation>();
   public navigationChanged = this.navigation.asObservable();
 
+  private showNavigationDetail = new Subject<boolean>();
+  public navigationDetailChanged = this.showNavigationDetail.asObservable();
+
   public changeNavigation(value) {
     this.navigation.next(value);
-    //console.log('navigation from changeNavigation service is ' + value);
+    console.log('navigation from changeNavigation service is ' + value);
+  }
+
+  public updateNavigationDetail(value) {
+    this.showNavigationDetail.next(value);
   }
 }

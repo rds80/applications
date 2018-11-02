@@ -6,4 +6,7 @@
 </mat-select>
 </mat-form-field>
 <br/>
+<div *ngIf="appId > 0">
+<button (click)="sendChangedNavDetail(appId)">Add New Menu Item</button>
+</div>
 <app-navigation-detail></app-navigation-detail>

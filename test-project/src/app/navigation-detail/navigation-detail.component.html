@@ -1,4 +1,4 @@
-<div *ngIf="navigation != null">
+<div *ngIf="navigation != null || showNavDetail">
 <form>
   <label for="navName">Navigation Name</label>
   <br/>
@@ -36,7 +36,18 @@
     [checked]="navigation.NavActive === 'Y' ? true:false"
     (change)="onActiveChange(navigation, $event)">Navigation Active
   <br/>
-
-  <button type="submit" (click)="onSubmit(navigation)">Submit</button>
+  <input type="checkbox" [id]="navigation.NavDesktop" [name]="navigation.NavDesktop"
+    [checked]="navigation.NavDesktop === 'Y' ? true:false"
+    (change)="onDesktopChange(navigation, $event)">Desktop View
+  <br/>
+  <input type="checkbox" [id]="navigation.NavTablet" [name]="navigation.NavTablet"
+    [checked]="navigation.NavTablet === 'Y' ? true:false"
+    (change)="onTabletChange(navigation, $event)">Tablet View
+  <br/>
+  <input type="checkbox" [id]="navigation.NavPhone" [name]="navigation.NavPhone"
+    [checked]="navigation.NavPhone === 'Y' ? true:false"
+    (change)="onPhoneChange(navigation, $event)">Phone View
+  <br/>
+  <button type="submit" (click)="onSubmit(navigation)">Save</button>
 </form>
 </div>

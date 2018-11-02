@@ -11,20 +11,27 @@ import { ShareNavigationService } from '../share-navigation.service';
 })
 export class NavigationComponent implements AfterViewInit {
   navigations: Array<INavigation>;
+  appId: number;
 
   constructor(private navigationService: NavigationService, private shareAppIdService: ShareAppIDService,
     private sharedNavService: ShareNavigationService) { }
 
   ngAfterViewInit() {
-    this.shareAppIdService.appIdChanged.subscribe((appId) => {
+    this.shareAppIdService.appIdChanged.subscribe((appId: number) => {
+      this.appId = appId;
       this.navigationService
         .getNavigations(appId)
         .subscribe(data => {this.navigations = data; });
-        console.log(appId);
+        console.log(this.appId);
     });
   }
 
   sendChangedNav(nav) {
     this.sharedNavService.changeNavigation(nav);
+  }
+
+  sendChangedNavDetail(appId) {
+    this.sharedNavService.updateNavigationDetail(true);
+    this.shareAppIdService.changeAppId(appId);
   }
 }
